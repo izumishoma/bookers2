@@ -12,9 +12,7 @@
         <td><%= user.introduction %></td>
       </tr>
     </table>
-    <% if @user == current_user %>
       <p><%= link_to "edit", edit_user_path(user) %></p>
-    <% end %>
   </div>
   
   
