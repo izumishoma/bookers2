@@ -1,2 +1,23 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+.box {
+  margin: 8px 0;
+}
+
+header {
+  margin-bottom: 15px;
+}
+
+footer {
+  margin-top: 15px;
+}
+

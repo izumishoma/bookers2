@@ -1,29 +1,35 @@
-<div class="d-flex justify-content-center">
-  <div class="d-flex flex-column">
-    <h1>User info</h1>
-    
-    <% if @user.errors.any? %>
-      <h3><%= @user.errors.count %>errors prohibited this obj from being saved:</h3>
-      <ul>
-        <% @user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-12 p-5">
 
-    <%= form_with model: @user do |f| %>
-      <p>Name</p>
-      <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"Name" %>
+      <h1>User info</h1><br>
+  
+      <% if @user.errors.any? %>
+        <h3><%= @user.errors.count %>errors prohibited this obj from being saved:</h3>
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>
 
-      <p>Image</p>
-      <%= f.file_field :profile_image, placeholder: "image", accept: "image/*" %>
-
-      <p>Introduction</p>
-      <%= f.text_area :introduction %>
-    
-    <div class="d-flex flex-row">
-      <%= f.submit "Update User" %>
+      <%= form_with model: @user do |f| %>
+      <div class = "box">
+        <label>Name</label><br>
+        <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"Name" %><br>
+      </div>
+      <div class = "box">
+        <label>Image</label><br>
+        <%= f.file_field :profile_image, placeholder: "image", accept: "image/*" %><br>
+      </div>
+      <div class = "box">
+        <label>Introduction</label><br>
+        <%= f.text_area :introduction %><br>
+      </div>
+      <div class="d-flex flex-row box">
+        <%= f.submit "Update User" %>
+      </div>
+      <% end %>
     </div>
-    <% end %>
   </div>
 </div>
