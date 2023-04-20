@@ -24,21 +24,25 @@
           <th>Body</th>
         </tr>
         <% @books.each do |book| %>
-        <tr>
-          <td><%= image_tag book.user.get_profile_image(100,100) %></td>
-          <td>
-            <div class="text-break">
-              <%= link_to  book_path(book.id) do %>
-                <%= book.title %>
+          <tr>
+            <td>
+              <%= link_to  user_path(book.user) do %>
+                <%= image_tag book.user.get_profile_image(100,100) %>
               <% end %>
-            </div>
-          </td>
-          <td>
-            <div class="text-break">
-              <%= book.body %>
-            </div>
-          </td>
-        </tr>
+            </td>
+            <td>
+              <div class="text-break">
+                <%= link_to  book_path(book.id) do %>
+                  <%= book.title %>
+                <% end %>
+              </div>
+            </td>
+            <td>
+              <div class="text-break">
+                <%= book.body %>
+              </div>
+            </td>
+          </tr>
       <% end %>
       </table>
     </div>
